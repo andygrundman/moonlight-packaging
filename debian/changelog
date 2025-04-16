@@ -1,3 +1,7 @@
+moonlight-qt (6.1.0-4) UNRELEASED; urgency=low
+
+  * Update FFmpeg to fix HEVC hardware decoder on Raspberry Pi when using kernel 6.12
+
 moonlight-qt (6.1.0-3) UNRELEASED; urgency=low
 
   * Update FFmpeg to 7.1 for generic embedded packages
