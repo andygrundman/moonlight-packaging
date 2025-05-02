@@ -14,7 +14,7 @@ VERSION=`cat app/version.txt`
 
 # Determine extra target-specific dependencies
 if [ "$TARGET" == "rpi" ]; then
-    EXTRA_CONFIG="CONFIG+=gpuslow"
+    #EXTRA_CONFIG="CONFIG+=gpuslow"
     if [ "$DISTRO" = "buster" ]; then
         EXTRA_BUILD_DEPS="libraspberrypi-dev | rbp-userland-dev-osmc"
         EXTRA_DEPS="libraspberrypi0 | rbp-userland-osmc"
@@ -23,7 +23,7 @@ if [ "$TARGET" == "rpi" ]; then
         EXTRA_CONFIG="$EXTRA_CONFIG CONFIG+=disable-mmal"
     fi
 elif [ "$TARGET" == "rpi64" ]; then
-    EXTRA_CONFIG="CONFIG+=gpuslow"
+    #EXTRA_CONFIG="CONFIG+=gpuslow"
     if [ "$DISTRO" != "buster" ]; then
         EXTRA_DEPS="$EXTRA_DEPS, libdecor-0-0"
         EXTRA_CONFIG="$EXTRA_CONFIG CONFIG+=disable-mmal"
@@ -39,7 +39,7 @@ elif [ "$TARGET" == "desktop" ]; then
     EXTRA_BUILD_DEPS="libwayland-dev, wayland-protocols, libva-dev, libvdpau-dev"
     EXTRA_DEPS="$EXTRA_DEPS, libdecor-0-0"
 elif [ "$TARGET" == "embedded" ]; then
-    EXTRA_CONFIG="CONFIG+=gpuslow"
+    #EXTRA_CONFIG="CONFIG+=gpuslow"
     if [ "$DISTRO" != "bullseye" ]; then
         EXTRA_BUILD_DEPS="libwayland-dev, wayland-protocols"
         EXTRA_DEPS="$EXTRA_DEPS, libdecor-0-0"
